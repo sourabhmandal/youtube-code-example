@@ -19,6 +19,7 @@ const OauthGoogleUrlAPI = "https://www.googleapis.com/oauth2/v2/userinfo?access_
 const OauthFacebookUrlAPI = "https://graph.facebook.com/v13.0/me?fields=id,name,email,picture&access_token&access_token="
 
 func LoadConfig() {
+	// Oauth configuration for Google
 	AppConfig.GoogleLoginConfig = oauth2.Config{
 		ClientID:     os.Getenv("GOOGLE_CLIENT_ID"),
 		ClientSecret: os.Getenv("GOOGLE_CLIENT_SECRET"),
@@ -30,6 +31,7 @@ func LoadConfig() {
 		},
 	}
 
+	// Oauth configuration for Facebook
 	AppConfig.FacebookLoginConfig = oauth2.Config{
 		ClientID:     os.Getenv("FB_CLIENT_ID"),
 		ClientSecret: os.Getenv("FB_CLIENT_SECRET"),
